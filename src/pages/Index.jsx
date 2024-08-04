@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -35,6 +35,9 @@ const Index = () => {
         </motion.div>
 
         <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowMore(!showMore)}
@@ -44,22 +47,25 @@ const Index = () => {
           <ChevronDown className={`ml-2 transform transition-transform duration-300 ${showMore ? "rotate-180" : ""}`} />
         </motion.button>
 
-        {showMore && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mt-8"
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Interests</h2>
-            <ul className="list-disc list-inside mb-8 text-gray-700">
-              <li>Future of humanity</li>
-              <li>Best practices for building products</li>
-              <li>Science+Engineering-mindset to design mechanisms for a maximally positive-sum society</li>
-            </ul>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {showMore && (
+            <motion.div
+              key="more-content"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mt-8 overflow-hidden"
+            >
+              <h2 className="text-2xl font-semibold mb-4 text-gray-800">Interests</h2>
+              <ul className="list-disc list-inside mb-8 text-gray-700">
+                <li>Future of humanity</li>
+                <li>Best practices for building products</li>
+                <li>Science+Engineering-mindset to design mechanisms for a maximally positive-sum society</li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
   );
