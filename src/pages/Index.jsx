@@ -6,7 +6,7 @@ const Index = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
