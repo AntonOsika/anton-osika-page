@@ -1,23 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [showMore, setShowMore] = useState(false);
-  const [gradientColors, setGradientColors] = useState({
-    from: "blue-200",
-    via1: "indigo-200",
-    via2: "pink-200",
-    to: "purple-200"
-  });
-
-  const updateColor = (position, color) => {
-    setGradientColors(prev => ({ ...prev, [position]: color }));
-  };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-${gradientColors.from} via-${gradientColors.via1} via-${gradientColors.via2} to-${gradientColors.to} p-8`}>
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-indigo-200 via-pink-200 to-purple-200 p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,33 +66,6 @@ const Index = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-12"
-        >
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800">Customize Background</h2>
-          <div className="flex flex-wrap gap-4">
-            {Object.entries(gradientColors).map(([position, color]) => (
-              <div key={position} className="flex flex-col items-center">
-                <span className="mb-2 text-sm font-medium text-gray-700">{position}</span>
-                <div className="flex gap-2">
-                  {['blue', 'indigo', 'pink', 'purple'].map(baseColor => (
-                    <Button
-                      key={baseColor}
-                      variant="outline"
-                      size="sm"
-                      className={`w-8 h-8 rounded-full bg-${baseColor}-200 hover:bg-${baseColor}-300`}
-                      onClick={() => updateColor(position, `${baseColor}-200`)}
-                    />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </div>
   );
