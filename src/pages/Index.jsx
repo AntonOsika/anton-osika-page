@@ -4,18 +4,17 @@ const Index = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-4">Anton Osika</h1>
-      <p className="text-xl mb-8">Solving neglected problems with a science and engineering mindset.</p>
+      <p className="text-xl mb-8">I'm an impact focused builder. I like to reason myself to the next action from first principles.</p>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Grew up in Stockholm, Sweden, which is a great place but unfortunately not as dense with high-agency people as I realised other places are</li>
-          <li>Role models are Feynman and similar Physicists that came after him</li>
-          <li>I like solving neglected problems</li>
-          <li>Founders Pledge member</li>
-          <li>Helped build Sana Labs, Depict.ai, Lovable</li>
-          <li>Considered going into AI Safety way back before it was "cool", but startups are too alluring</li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">A few things about me</h2>
+        <p className="mb-4">Hey there! I'm Anton, and I've got a bit of a story to share with you.</p>
+        <p className="mb-4">I grew up in Stockholm, Sweden. It's a fantastic place, but as I've traveled, I've realized it's not quite as packed with high-agency folks as some other spots around the globe.</p>
+        <p className="mb-4">When it comes to role models, I'm all about Feynman and the brilliant physicists who followed in his footsteps. Their approach to problem-solving and curiosity about the world really resonates with me.</p>
+        <p className="mb-4">Speaking of problem-solving, I've got a bit of a thing for tackling neglected issues. You know, the ones that others might overlook but could have a big impact if addressed.</p>
+        <p className="mb-4">I'm proud to be a Founders Pledge member, aligning my work with my values for long-term impact.</p>
+        <p className="mb-4">Over the years, I've had the privilege of helping build some exciting ventures: Sana Labs, Depict.ai, and Lovable. Each one has been a unique journey and learning experience.</p>
+        <p className="mb-4">Here's a fun fact: I seriously considered diving into AI Safety way back before it became the hot topic it is today. But you know how it goes - the allure of startups was just too strong to resist!</p>
       </section>
 
       <section className="mb-8">
